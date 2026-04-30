@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: tradeindia-backend
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DB_PATH
+        value: /tmp/inquiries.db
+      - key: OPENAI_API_KEY
+        sync: false
+    disk:
+      name: sqlite-data
+      mountPath: /tmp
+      sizeGB: 1
+
+  - type: static
+    name: tradeindia-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://tradeindia-backend.onrender.com
