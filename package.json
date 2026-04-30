@@ -1,13 +1,45 @@
 {
-  "name": "tradeindia-inquiry-manager",
+  "name": "tradeindia-frontend",
   "version": "1.0.0",
-  "description": "TradeIndia Inquiry Manager - Full Stack Application",
-  "scripts": {
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
-    "dev": "concurrently "cd backend && npm run dev" "cd frontend && npm start"",
-    "start": "cd backend && npm start"
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "axios": "^1.6.0",
+    "recharts": "^2.10.0",
+    "react-datepicker": "^4.24.0",
+    "react-select": "^5.8.0",
+    "lucide-react": "^0.294.0",
+    "react-hot-toast": "^2.4.1",
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.16",
+    "react-scripts": "5.0.1",
+    "react-dropzone": "^14.2.3"
   },
-  "devDependencies": {
-    "concurrently": "^8.2.0"
-  }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000"
 }
